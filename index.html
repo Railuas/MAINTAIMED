@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mane Tamed Loc & Curl Bar</title>
+    <style>
+        :root {
+            --black: #000000;
+            --dark-grey: #333333;
+            --medium-grey: #666666;
+            --light-grey: #f5f5f5;
+            --light-pink: #ffd6e0;
+            --gold: #d4af37;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-grey);
+            background-color: var(--light-grey);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--black);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--gold);
+        }
+        
+        nav {
+            background-color: var(--dark-grey);
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--light-pink);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--light-pink);
+            margin: 15px auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin: 0 0 10px;
+            color: var(--black);
+        }
+        
+        .service-duration, .service-price {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--medium-grey);
+        }
+        
+        .service-price {
+            font-weight: bold;
+            color: var(--gold);
+        }
+        
+        .policy-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .policy-card h3 {
+            color: var(--black);
+            margin-top: 0;
+        }
+        
+        .policy-card ul {
+            padding-left: 20px;
+        }
+        
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card h3 {
+            color: var(--black);
+            margin-top: 0;
+        }
+        
+        footer {
+            background-color: var(--black);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            color: var(--medium-grey);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                height: 300px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">MANE TAMED</h1>
+        <p>Loc & Curl Bar</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#policies">Policies</a></li>
+            <li><a href="#info">Information</a></li>
+            <li><a href="#book">Book Now</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Hair Care for Locs & Curls</h1>
+            <a href="#book" class="btn">Book Your Appointment</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Loc-Tamed Sister Locs</h3>
+                        <span class="service-duration">420 mins</span>
+                        <span class="service-price">$600</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Wash + Blow</h3>
+                        <span class="service-duration">30 mins</span>
+                        <span class="service-price">$50</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Two Strand Twists (Natural Long)</h3>
+                        <span class="service-duration">150 mins</span>
+                        <span class="service-price">$70</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Mini-Manes Wash, Retwist + Style (Kids)</h3>
+                        <span class="service-duration">90 mins</span>
+                        <span class="service-price">$90</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Dye + Treatment</h3>
+                        <span class="service-duration">150 mins</span>
+                        <span class="service-price">$80</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Starter Locs</h3>
+                        <span class="service-duration">150 mins</span>
+                        <span class="service-price">$180</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Loc-Tamed Retwist & Style</h3>
+                        <span class="service-duration">120 mins</span>
+                        <span class="service-price">$100</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">LOC-Tamed Fade Retwist & Style</h3>
+                        <span class="service-duration">90 mins</span>
+                        <span class="service-price">$60</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Two Strand Twists (Natural Hair)</h3>
+                        <span class="service-duration">120 mins</span>
+                        <span class="service-price">$90</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Wash N Go (Short)</h3>
+                        <span class="service-duration">90 mins</span>
+                        <span class="service-price">$60</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Loc Removal</h3>
+                        <span class="service-duration">450 mins</span>
+                        <span class="service-price">$200</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Full Treatment + Style</h3>
+                        <span class="service-duration">210 mins</span>
+                        <span class="service-price">$140</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Loc-Tamed Dye & Styled</h3>
+                        <span class="service-duration">210 mins</span>
+                        <span class="service-price">$140</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Wash N Go (medium)</h3>
+                        <span class="service-duration">90 mins</span>
+                        <span class="service-price">$70</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Wash N Go (long)</h3>
+                        <span class="service-duration">120 mins</span>
+                        <span class="service-price">$90</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Retwist</h3>
+                        <span class="service-duration">80 mins</span>
+                        <span class="service-price">$80</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Detox (only)</h3>
+                        <span class="service-duration">90 mins</span>
+                        <span class="service-price">$80</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Detox + Style</h3>
+                        <span class="service-duration">165 mins</span>
+                        <span class="service-price">$180</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Braided Styles</h3>
+                        <span class="service-duration">210 mins</span>
+                        <span class="service-price">$160</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="policies">
+            <h2>Our Policies</h2>
+            
+            <div class="policy-card">
+                <h3>Cancellation and No-Show Policy</h3>
+                <p>Every client is important to us, and we understand that things come up. To give your appointment the attention it deserves, we request at least 24 hours' notice for cancellations or changes. Without 24-hour notice, a 50% charge of your booked service will apply.</p>
+            </div>
+            
+            <div class="policy-card">
+                <h3>Late Policy</h3>
+                <p>Please be sure to arrive on time for your appointment. Arriving late may result in your appointment being rescheduled or canceled. Please call us on (869-664-4516) if you're going to be over 10 minutes late.</p>
+            </div>
+            
+            <div class="policy-card">
+                <h3>Refund Policy</h3>
+                <ul>
+                    <li>Services received cannot be refunded. We will gladly adjust any service within two days of your appointment. Please return to the salon for a visual inspection, and we will work to correct any issues to your satisfaction.</li>
+                    <li>A non-refundable deposit of $50 is required when booking your appointment. This deposit will be applied to your final bill. Cancellations or no-shows result in 100% deposit forfeit.</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card">
+                <h3>Hair Prep</h3>
+                <p>Services include shampoo, conditioner, and detangling. Please ensure all braids, twists, and previous styles are removed before your appointment. If your service doesn't include a wash, make sure your hair is product-free.</p>
+            </div>
+            
+            <div class="policy-card">
+                <h3>Extra Guests</h3>
+                <p>NO extra guests (unless you are a parent of a child) are allowed during the time of your service. They will be asked to leave to ensure we are able to give you the attention you deserve during your service.</p>
+            </div>
+        </section>
+        
+        <section id="info">
+            <h2>Salon Information</h2>
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> 1-869-664-4516</p>
+                    <p><strong>Email:</strong> info@manetamed.com</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Hours of Operation</h3>
+                    <p><strong>Tuesday-Saturday:</strong> 10:00 am to 6:00 pm</p>
+                    <p><strong>Monday & Sunday:</strong> CLOSED</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>Lewis Lane, Wellington Road, St.Kitts.</p>
+                    <p>There's a road directly in front of Horseford Automotive (Lewis Lane) once entered it's the 4th building on your left hand side. Beautyro signs are on the outside.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="book">
+            <h2>Book Your Appointment</h2>
+            <div style="text-align: center;">
+                <!-- Setmore booking widget code would go here -->
+                <iframe src="https://booking.setmore.com/scheduleappointment/7c0c5f9a-7a1e-4a4b-9c5f-5e5e5e5e5e5e" width="100%" height="800px" frameborder="0"></iframe>
+                <p>Or call us at: 1-869-664-4516</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/Mane.Tamed" target="_blank">Instagram</a>
+            <a href="https://facebook.com/ManeTamed" target="_blank">Facebook</a>
+        </div>
+        <p>TAG US IN YOUR POST TO BE FEATURED @Mane.Tamed</p>
+        <p class="copyright">Thank you for choosing us</p>
+        <p class="copyright">Website powered by Launch One</p>
+        <p class="copyright">&copy; 2023 Mane Tamed Loc & Curl Bar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
